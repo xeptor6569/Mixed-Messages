@@ -37,20 +37,40 @@ const thirdMessage = [
     "Drink plenty of water. It's good for physical and mental health."
 ];
 
+var message = {
+    first: "",
+    second: "",
+    third: ""
+}
 
 function setMessage() {
-    let random = Math.round(Math.random() * firstMessage.length);   
-    let todaysQuote = "Todays Quote: " + firstMessage[random];
+    let random = Math.floor(Math.random() * firstMessage.length);   
+    message.first = "Todays Quote: " + firstMessage[random];
 
-    random = Math.round(Math.random() * secondMessage.length);
-    let goal = "Todays Goal: " + secondMessage[random];
+    random = Math.floor(Math.random() * secondMessage.length);
+    message.second = "Todays Goal: " + secondMessage[random];
 
-    random = Math.round(Math.random() * thirdMessage.length);
-    let rememberTo = "Remember to: " + thirdMessage[random];
+    random = Math.floor(Math.random() * thirdMessage.length);
+    message.third = "Remember to: " + thirdMessage[random];
 
-    console.log(todaysQuote);
-    console.log(goal);
-    console.log(rememberTo);
+    //console.log(message.first);
 }
+
+function displayMessage() {
+    setMessage();
+
+    var text = "<p>";
+
+    text += message.first;
+    text += "</p><br><p>";
+    text += message.second;
+    text += "</p><br><p>";  
+    text += message.third;
+    text += "</p>";
+    
+    //document.write(message);
+    document.getElementById("mes").innerHTML = text;
+}
+
 // Test
-setMessage();
+//displayMessage();
