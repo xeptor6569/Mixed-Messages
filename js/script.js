@@ -68,7 +68,7 @@ function displayMessage() {
     text += "</p>";
     
     // Write in paragraph with id 'mes'
-    document.getElementById("mes").innerHTML = text;
+    document.getElementById("message").innerHTML = text;
 }
 
 // For debugging or output to console
